@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FIT 最适合你的健身网站/首页</title>
+<link href="index.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="index.js"></script>
+<script type="text/jscript">
+$(document).ready(function(e) {
+	$("#image").fadeIn(1000);
+	$("#header").fadeIn(1000);
+	$("#seek").fadeIn(1500);
+	$("#title").fadeIn(2000);
+   $("#image").mouseover(function(){
+	  $(this).css("cursor","pointer"); 
+	  $(this).fadeOut(1000);
+   });
+   $("#image").mouseout(function(){ 
+	  $(this).fadeIn(1000);
+   });
+   $(".more a").hover(function(e){
+	   $(this).css("text-decoration","undeeline");
+   },
+   function(){
+	   $(this).css("text-decoration","none");
+   });
+   $("#img1,#img2").mouseover(function(){
+	   $(this).css("cursor","pointer");
+   });
+   $(".img").mouseover(function(){
+	   $(this).css("cursor","pointer");
+   });
+   $("h3").hide();
+   $("#button1").click(function(){
+	   $("h3 p").css({"color":"#ff95bc","font-weight":"bold","font-size":"17px"});
+	  $("h3","h3 p").fadeIn(1000); 
+	  $("h3").fadeIn(1000);
+   });
+   $("#top a").hover(function(){
+	   $(this).css({"border":"1px solid",
+	   "border-radius":"6px",
+	   "color":"#a371d0"
+	   });
+   },
+   function(){
+	   $(this).css({"border":"","color":""});
+   });
+   $("#button,#button1").hover(function(){
+	   $(this).css("cursor","pointer");
+   },
+   function(){
+	   $(this).css("cursor","");
+   });
+   $("#t2 .tr2").on({
+	  mouseover:function(){
+			$(this).css({
+				"background":"#213051",
+				"cursor":"pointer"
+			});
+		  },
+	  mouseout:function(){
+		  $(this).css({
+				"background":"",
+				"cursor":""
+			});
+		  } 
+   	});
+	/*$("#t2 img").bind({
+		mouseover:function(){
+			$(this).animate(
+			{position:'absolute'},"1000"
+			);
+			$(this).animate(
+			{width:'70px'},"1000"
+			);
+			$(this).animate(
+			{height:'60px'},"1000"
+			);
+		},
+		mouseout:function(){
+			$(this).animate(
+			{width:'60px'},"1000"
+			);
+			$(this).animate(
+			{height:'50px'},"1000"
+			);
+		}
+		
+	});*/
+});
+
+</script>
+</head>
+
+<body onLoad="clock()">
+<div id="wrapper">
+  <div id="top">
+    <div id="image"></div>
+    <p id="title" style="color:#a371d0; position:absolute;top:20px; left:100px; display:none; font-weight:bold;">FIT 最适合你的健身网站</p>
+    <ul id="u1">
+      <li><a href="index.html" target="_self">首页</a></li>
+      <li><a href="#">身体指数</a></li>
+      <li><a href="#">健身指导</a></li>
+      <li><a href="food.html">食物营养</a></li>
+      <li><a href="shop.html">商城</a></li>
+      <li><a href="suggest.html" target="_self">我有建议</a></li>
+    </ul>
+    <ul id="u2">
+      <li><a href="log.html" target="_self">登录</a><span style="color:#FFF;">&nbsp;|&nbsp;</span><a href="new.html" target="_self">注册</a></li>
+    </ul>
+  </div>
+  <div id="header">
+    <div id="clock">
+      <form name="form1" method="post" action="">
+        <div> <img id="n1" src="lcd/0.gif"/><img id="n2" src="lcd/0.gif"/><img src="lcd/dot.gif"/><img id="n3" src="lcd/0.gif"/><img id="n4" src="lcd/0.gif"/><img src="lcd/dot.gif"/><img id="n5" src="lcd/0.gif"/><img id="n6" src="lcd/0.gif"/> </div>
+        <p id="p" style="color:#FFF; font-weight:bold;`">别等时间，因为时间不会等你</p>
+      </form>
+    </div>
+    <div id="seek">
+      <label>指标</label>
+      <input type="radio" name="radio" checked>
+      <label>营养</label>
+      <input type="radio" name="radio">
+      <label>健身</label>
+      <input type="radio" name="radio">
+      <label>减肥</label>
+      <input type="radio" name="radio">
+      <br>
+      <input type="text" id="text">
+      <input type="button" id="button" value="搜索">
+    </div>
+  </div>
+  <div id="main">
+    <div class="messagebox" id="mb1">
+      <div  class="newsTitle" id="nt1">名人课堂<a href="#" target="_self">更多+</a> </div>
+      <div id="img1" style="opacity:0.8" onmouseover="visible(this,1);" onmouseout="visible(this,0.7)">
+        <p>Mr.Danil 拳击专练</p>
+      </div>
+      <br>
+      <div id="img2" style="opacity:0.8" onmouseover="visible(this,1);" onmouseout="visible(this,0.7)">
+        <p>Doctor.Smith 核心力量强化</p>
+      </div>
+    </div>
+    <div class="messagebox" id="mb2">
+      <div  class="newsTitle" id="nt2">推荐补剂<a href="#" target="_self">更多+</a> </div>
+      <marquee><a href="#"><img src="picture/O1CN01nrqQtn1Ub4VatcwGM_!!196422535.jpg"><img src="picture/O1CN01Y7O00d1Ub4VgFnk58_!!196422535.jpg"><img src="picture/TB2QCFjiGSWBuNjSsrbXXa0mVXa_!!196422535.jpg"></marquee>
+    </div>
+    <div class="messagebox" id="mb3">
+      <div  class="newsTitle" id="nt3">健身动作<a href="#" target="_self">更多+</a> </div>
+      <div class="img" id="img3" style="opacity:0.8" onmouseover="visible(this,1);" onmouseout="visible(this,0.7)">
+        <p>胸肌</p>
+      </div>
+      <div class="img" id="img4" style="opacity:0.8" onmouseover="visible(this,1);" onmouseout="visible(this,0.7)">
+        <p>腹肌</p>
+      </div>
+      <div class="img" id="img5" style="opacity:0.8" onmouseover="visible(this,1);" onmouseout="visible(this,0.7)">
+        <p>前臂</p>
+      </div>
+      <div class="img" id="img6" style="opacity:0.8" onmouseover="visible(this,1);" onmouseout="visible(this,0.7)">
+        <p>背阔肌</p>
+      </div>
+      <div class="img" id="img7" style="opacity:0.8" onmouseover="visible(this,1);" onmouseout="visible(this,0.7)">
+        <p>三角肌</p>
+      </div>
+      <div class="img" id="img8" style="opacity:0.8" onmouseover="visible(this,1);" onmouseout="visible(this,0.7)">
+        <p>肱二头肌</p>
+      </div>
+      <!-- 公告开始 -->
+      <div  id="news"> 
+        <!--  头部 -->
+        <div  class="newsTitle" id="nt4">近期热点<a href="#" target="_self">更多+</a> </div>
+        <!--  头部结束 --> 
+        <!--  中间 -->
+        <div  id="newsBox">
+          <ul id="con1">
+            <li><a href="#">1.
+健身知识：不要错把疲劳当强度！
+</a><span>2018-09-18</span></li>
+            <li><a href="#">2.跳跃训练：落地技巧</a><span>2018-10-09</span></li>
+            <li><a href="#">3.不只是杠铃：3个值得尝试的训练器材</a><span>2018-10-21</span></li>
+            <li><a href="#">4.卧推基本功：握杠技巧</a><span>2018-11-01</span></li>
+            <li><a href="#">5.健身知识：卧推的运动轨迹</a><span>2018-11-06</span></li>
+            <li><a href="#">6.侧平举：其实并不是从侧面举起来</a><span>2018-11-08</span></li>
+            <li><a href="#">7. 运动训练：为什么爆发型运动员不需要长时</a><span>2018-11-15</span></li>
+            <li><a href="#">8.硬拉下背痛？这个错误要避免！</a><span>2018-11-22</span></li>
+            <li><a href="#">9.卧推重点：如何构建一个稳定的肩胛？</a><span>2018-12-06</span></li>
+            <li><a href="#">10.初学者和进阶者训练计划设计原则</a><span>2018-10-21</span></li>
+          </ul>
+          <ul id="con2">
+            <li><a href="#">1.
+健身知识：不要错把疲劳当强度！
+</a><span>2018-09-18</span></li>
+            <li><a href="#">2.跳跃训练：落地技巧</a><span>2018-10-09</span></li>
+            <li><a href="#">3.不只是杠铃：3个值得尝试的训练器材</a><span>2018-10-21</span></li>
+            <li><a href="#">4.卧推基本功：握杠技巧</a><span>2018-11-01</span></li>
+            <li><a href="#">5.健身知识：卧推的运动轨迹</a><span>2018-11-06</span></li>
+            <li><a href="#">6.侧平举：其实并不是从侧面举起来</a><span>2018-11-08</span></li>
+            <li><a href="#">7. 运动训练：为什么爆发型运动员不需要长时</a><span>2018-11-15</span></li>
+            <li><a href="#">8.硬拉下背痛？这个错误要避免！</a><span>2018-11-22</span></li>
+            <li><a href="#">9.卧推重点：如何构建一个稳定的肩胛？</a><span>2018-12-06</span></li>
+            <li><a href="#">10.初学者和进阶者训练计划设计原则</a><span>2018-10-21</span></li>
+          </ul>
+        </div>
+        <!--  中间结束 --> 
+        <!--  底部 -->
+        <div  id ="newsBot"> </div>
+        <!--  底部结束 --> 
+      </div>
+      <!-- 公告结束 --> 
+    </div>
+    <div class="tb" id="testbox1"> 
+    	<div  class="newsTitle" id="nt2">BMI指数测量</div>
+        <div id="calculator">
+        <br>
+        <label>身高:</label><input type="text" id="input1"><label>CM(厘米)</label><span>&nbsp;&nbsp;</span><label>体重:</label><input type="text" id="input2"><label>KG(1KG = 2斤)</label><span>&nbsp;&nbsp;</span><input type="button" id="button1" onClick="calculator()" value="计算"><br><br>
+        <h3>您的BMI指数为<p id="result"></p></h3>
+        </div><br><br>
+        <div id="tabel">
+        <table id="t1" border="2px;" width="630px;">
+        <tr>成人身体质量指数</tr>
+        <tr><td>轻体重</td><td >健康体重</td><td >超重</td><td>肥胖</td></tr>
+        <tr><td><p>BMI<18.5</p></td><td ><p>18.5≤BMI≤24</p></td><td ><p>24≤BMI≤28</p></td><td><p>28≤BMI</p></td></tr>
+        </table>
+        </div>
+     </div>
+    <div class="tb" id="testbox2">
+     <div  class="newsTitle" id="nt2">今日饮食指导</div>
+     <table id="t2" border="2px;" width="630px;" bordercolor="#9900FF">
+     	<tr><td>名称</td><td class="td2" id="td1">图示</td><td>营养素(每100g)</td><td>评价</td></tr>
+        <tr class="tr2"><td>小米粥</td><td class="td2" id="td2"></td><td class="td_2">
+    热量(大卡)46.00
+    碳水化合物(克)8.40
+    脂肪(克)0.70
+    蛋白质(克)1.40 </td><td class="td_2">小米粥含水量极高，热量极低，但不含膳食纤维，推荐减肥期间作为粗粮搭配主食食用。  </td></tr>
+        <tr class="tr2"><td>河蟹</td><td class="td2" id="td3"></td><td class="td_2">
+    热量(大卡)103.00
+    碳水化合物(克)2.30
+    脂肪(克)2.60
+    蛋白质(克)17.50 </td><td class="td_2">蟹肉含有丰富的蛋白质及钙质等微量元素，而且热量很低，非常适宜减肥期间食用。 </td></tr>
+        <tr class="tr2"><td>鸡蛋</td><td class="td2" id="td4"></td><td class="td_2">
+    热量(大卡)144.00
+    碳水化合物(克)2.80
+    脂肪(克)8.80
+    蛋白质(克)13.30  </td><td class="td_2">鸡蛋热量及营养与生鸡蛋基本相同，但熟鸡蛋中的营养物质被人体吸收利用效率更高。  </td ></tr>
+        <tr class="tr2"><td>玉米</td><td class="td2" id="td5"></td><td class="td_2">
+    热量(大卡)112.00
+    碳水化合物(克)22.80
+    脂肪(克)1.20
+    蛋白质(克)4.00
+    纤维素(克)2.90 </td><td class="td_2">一种热量较低纤维含量较高的粗粮，适量进食可缓解便秘，营养学会建议每天最好吃50g以上粗粮，减肥期间推荐食用。 </td></tr>
+        <tr class="tr2"><td></td><td class="td2" id="td6"></td><td class="td_2"></td><td class="td_2"></td></tr>
+     </table>
+     </div>
+  </div>
+  <div id="footer">
+    <ul id="u3">
+      <li>1740706207</li>
+      <li>徐敏祥</li>
+      <li>计算机科学与技术</li>
+      <li>版权所有，抄袭必究</li>
+    </ul>
+  </div>
+</div>
+<script>
+var area=document.getElementById('newsBox');
+var con1=document.getElementById('con1');
+var con2=document.getElementById('con2');
+con2.innerHTML=con1.innerHTML;
+var time=50;
+function scrollUp(){
+if(area.scrollTop >=con1.offsetHeight){
+	area.scrollTop=0;
+}
+    else{
+	area.scrollTop++;}
+	}
+	var myScroll = setInterval('scrollUp()',time);
+	area.onmouseover=function(){
+		clearInterval(myScroll);
+		}
+		area.onmouseout=function(){
+			myScroll = setInterval('scrollUp()',time);	
+}
+function calculator(){
+	var h = document.getElementById("input1").value;
+	var w = document.getElementById("input2").value;
+	if(h!=""&&w!=""){
+		var result = w/(h*h)*10000;
+		document.getElementById("result").innerHTML = result;
+	}else
+	alert("请输入完整数据！");
+}
+</script>
+</body>
+</html>

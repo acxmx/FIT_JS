@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FIT 最适合你的健身网站/登录</title>
+<link href="log.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script type="text/jscript">
+$(document).ready(function(e) {
+	$("#a1").css("color","#a371d0");
+	$("#image").fadeIn(1000);
+	$("#header").fadeIn(1000);
+	$("#log2").fadeIn(1500);
+	$("#title").fadeIn(2000);
+   $("#image").mouseover(function(){
+	  $(this).css("cursor","pointer"); 
+	  $(this).fadeOut(1000);
+   });
+   $("#image").mouseout(function(){ 
+	  $(this).fadeIn(1000);
+   });
+   $("#submit").hover(function(){
+	   $(this).css("cursor","pointer");
+   },
+   function(){
+	   $(this).css("cursor","");
+   });
+	$("#top a").hover(function(){
+	   $(this).css({"border":"1px solid",
+	   "border-radius":"6px",
+	   "color":"#a371d0"
+	   });
+   },
+   function(){
+	   $(this).css({"border":"","color":""});
+   });
+   $("#telelog").hide();
+   $("#a1").click(function(){
+	  $("#a1").css("color","#a371d0");
+	  $("#a2").css("color","#f3ddff"); 
+	  $(".form-group").fadeIn(500);
+	  $("#logo").fadeIn(500);
+	  $("#telelog").hide();
+	  
+   });
+   $("#a2").click(function(){
+	  $("#a2").css("color","#a371d0");
+	  $("#a1").css("color","#f3ddff"); 
+	  $(".form-group").hide();
+	  $("#logo").hide();
+	  $("#telelog").fadeIn(500);
+   });
+   
+});
+
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="top">
+    <div id="image"><a href="#"></a></div>
+    <p id="title" style="color:#a371d0; position:absolute;top:20px; left:100px; display:none; font-weight:bold;">FIT 最适合你的健身网站</p>
+    <ul id="u1">
+       <li><a href="index.html" target="_self">首页</a></li>
+      <li><a href="#">身体指数</a></li>
+      <li><a href="#">健身指导</a></li>
+      <li><a href="food.html">食物营养</a></li>
+      <li><a href="shop.html">商城</a></li>
+      <li><a href="suggest.html" target="_self">我有建议</a></li>
+    </ul>
+    <ul id="u2">
+      <li><a href="log.html" target="_self">登录</a><span style="color:#FFF;">&nbsp;|&nbsp;</span><a href="new.html" target="_self">注册</a></li>
+    </ul>
+  </div>
+  <div id="header">
+    <div id="log2">
+      <form action="#" method="put" id="logbox">
+        <div id="lbox"><br>
+          <div id="way" style="margin-bottom:10px;"><a id="a1" href="#">用户名/密码登录</a><span>&nbsp;|&nbsp;</span><a id="a2" href="#">手机验证码登录</a></div>
+          <div class="form-group">
+            <input class="text" id="username" type="text" placeholder="请输入用户名" required>
+          </div>
+          <br>
+          <div class="form-group">
+            <input class="text" id="password" type="password" placeholder="请输入密码" required >
+          </div>
+          <br>
+          <div id="logo">
+            <input id="submit" type="submit" value="登录">
+          </div>
+          <div id="telelog">
+            <label>手机号:</label>
+            <input type="text" id="telenum">
+            <input type="button" id="send" value="发送">
+            <br>
+            <label>验证码:</label>
+            <input type="text" id="char">
+            <input type="button" id="loging" value="登录">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="main"> </div>
+<div id="footer">
+  <ul id="u3">
+    <li>1740706207</li>
+    <li>徐敏祥</li>
+    <li>计算机科学与技术</li>
+    <li>版权所有，抄袭必究</li>
+  </ul>
+</div>
+</div>
+<script type="text/javascript">
+window.onload=function(){
+	    var send=document.getElementById('send'),
+	        times=60,
+	        timer=null;
+		var telenum = document.getElementById("telenum");
+		var char = document.getElementById("char");
+		var loging = document.getElementById("loging");
+		var smbutton = document.getElementById("submit");
+		loging.onclick=function(){
+			if(char.value==""){
+			alert("请输入验证码!");
+			char.focus();
+			}
+		}
+	    send.onclick=function(){
+	      // 计时开始 
+		  if(telenum.value!=""){  
+		  telenum.value = "";
+           timer=setInterval(function(){//用于设置在指定的周期( 毫秒)来调用函数
+            times--;
+	        if(times<=0){
+	            send.value='发送';
+	            clearInterval(timer);//清除由setInterval设置的周期调用 
+	            times=10;
+	            send.disabled=false;
+	        }else{
+	            send.value=times+'s'
+	            send.disabled=true;
+	        }console.log(times)
+	    },1000)
+		  }else
+		  {
+		  	alert("请输入手机号！");
+		  	telenum.focus();
+		  }
+
+	    }
+		smbutton.onclick = function(){
+			var username = document.getElementById("username");
+			var password = document.getElementById("password");
+			if(password.value==""&&username.value=="")
+			{
+				alert("请输入用户名和密码！");
+				username.focus();
+				return ;
+			}
+			if(username.value==""){
+				alert("请输入用户名！");
+				username.focus();
+				return ;
+			}
+			if(password.value==""){
+				alert("请输入密码！");
+				password.focus();
+				return ;
+			}
+			
+			}
+}
+</script>
+</body>
+</html>

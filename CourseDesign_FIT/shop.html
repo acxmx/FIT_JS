@@ -1,0 +1,223 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/modindex.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>FIT 最适合你的健身网站/商城</title>
+<!-- InstanceEndEditable -->
+  <!-- InstanceBeginEditable name="content3" -->
+  
+  
+<link href="index.css" rel="stylesheet" type="text/css">
+<link href="shop.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="index.js"></script>
+<script type="text/jscript">
+$(document).ready(function(e) {
+	
+	$("#image").fadeIn(1000);
+	$("#header").fadeIn(1000);
+	$("#seek").fadeIn(1500);
+	$("#title").fadeIn(2000);
+   $("#image").mouseover(function(){
+	  $(this).css("cursor","pointer"); 
+	  $(this).fadeOut(1000);
+   });
+   $("#image").mouseout(function(){ 
+	  $(this).fadeIn(1000);
+   });
+   $(".more a").hover(function(e){
+	   $(this).css("text-decoration","undeeline");
+   },
+   function(){
+	   $(this).css("text-decoration","none");
+   });
+   $("#img1,#img2").mouseover(function(){
+	   $(this).css("cursor","pointer");
+   });
+   $(".img").mouseover(function(){
+	   $(this).css("cursor","pointer");
+   });
+   $("h3").hide();
+   $("#button1").click(function(){
+	   $("h3 p").css({"color":"#ff95bc","font-weight":"bold","font-size":"17px"});
+	  $("h3","h3 p").fadeIn(1000); 
+	  $("h3").fadeIn(1000);
+   });
+   $("#top a").hover(function(){
+	   $(this).css({"border":"1px solid",
+	   "border-radius":"6px",
+	   "color":"#a371d0"
+	   });
+   },
+   function(){
+	   $(this).css({"border":"","color":""});
+   });
+   $("#button,#button1").hover(function(){
+	   $(this).css("cursor","pointer");
+   },
+   function(){
+	   $(this).css("cursor","");
+   });
+   $("#t2 .tr2").on({
+	  mouseover:function(){
+			$(this).css({
+				"background":"#213051",
+				"cursor":"pointer"
+			});
+		  },
+	  mouseout:function(){
+		  $(this).css({
+				"background":"",
+				"cursor":""
+			});
+		  } 
+   	});
+	/*$("#t2 img").bind({
+		mouseover:function(){
+			$(this).animate(
+			{position:'absolute'},"1000"
+			);
+			$(this).animate(
+			{width:'70px'},"1000"
+			);
+			$(this).animate(
+			{height:'60px'},"1000"
+			);
+		},
+		mouseout:function(){
+			$(this).animate(
+			{width:'60px'},"1000"
+			);
+			$(this).animate(
+			{height:'50px'},"1000"
+			);
+		}
+		
+	});*/
+	$(function() {
+/**
+* the menu
+*/
+var $menu = $('#veryhuo_menu');
+/**
+* for each list element,
+* we show the submenu when hovering and
+* expand the span element (title) to 510px
+*/
+$menu.children('li').each(function(){
+var $this = $(this);
+var $span = $this.children('span');
+$span.data('width',$span.width());
+$this.bind('mouseenter',function(){
+$menu.find('.ldd_submenu').stop(true,true).hide();
+$span.stop().animate({'width':'510px'},300,function(){
+$this.find('.ldd_submenu').slideDown(300);
+});
+}).bind('mouseleave',function(){
+$this.find('.ldd_submenu').stop(true,true).hide();
+$span.stop().animate({'width':$span.data('width')+'px'},300);
+});
+});
+});
+});
+
+</script>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body onLoad="clock()">
+<div id="wrapper">
+  <div id="top">
+    <div id="image"></div>
+    <p id="title" style="color:#a371d0; position:absolute;top:20px; left:100px; display:none; font-weight:bold;">FIT 最适合你的健身网站</p>
+    <ul id="u1">
+      <li><a href="index.html" target="_self">首页</a></li>
+      <li><a href="#">身体指数</a></li>
+        <li><a href="#">健身指导</a></li>
+      <li><a href="food.html">食物营养</a></li>
+      <li><a href="shop.html">商城</a></li>
+      <li><a href="suggest.html" target="_self">我有建议</a></li>
+    </ul>
+    <ul id="u2">
+      <li><a href="log.html" target="_self">登录</a><span style="color:#FFF;">&nbsp;|&nbsp;</span><a href="new.html" target="_self">注册</a></li>
+    </ul>
+  </div>
+   <!-- InstanceBeginEditable name="content1" -->
+  <div id="header">
+    <div id="goods" class="box">
+<ul id="veryhuo_menu" class="veryhuo_menu">
+<li>
+<span style="font-size:22px">FIT 商城</span><!-- Increases to 510px in width-->
+<div class="ldd_submenu">
+<ul>
+<li class="ldd_heading">健身增肌</li>
+<li><a href="#">增肌粉</a></li>
+<li><a href="#">蛋白粉</a></li>
+<li><a href="#">增强力量</a></li>
+<li><a href="#">防止肌肉分解</a></li>
+</ul>
+<ul>
+<li class="ldd_heading">加餐必备</li>
+<li><a href="#">蛋白面包</a></li>
+<li><a href="#">蛋白饼干</a></li>
+<li><a href="#">蛋白泡面</a></li>
+<li><a href="#">香蕉</a></li>
+<li><a href="#">圣女果</a></li>
+<li><a href="#">土豆</a></li>
+</ul>
+<ul>
+<li class="ldd_heading">营养搭配</li>
+<li><a href="#">维生素B1</a></li>
+<li><a href="#">维生素B2</a></li>
+<li><a href="#">维生素A</a></li>
+<li><a href="#">维生素D</a></li>
+<li><a href="#">维生素K</a></li>
+<li><a href="#t">氨基酸系列</a></li>
+</ul>
+</div>>
+  </div>
+  <!-- InstanceEndEditable -->
+  <!-- InstanceBeginEditable name="content2" -->
+  
+  <!-- InstanceEndEditable -->
+  <div id="footer">
+    <ul id="u3">
+      <li>1740706207</li>
+      <li>徐敏祥</li>
+      <li>计算机科学与技术</li>
+      <li>版权所有，抄袭必究</li>
+    </ul>
+  </div>
+</div>
+<script>
+var area=document.getElementById('newsBox');
+var con1=document.getElementById('con1');
+var con2=document.getElementById('con2');
+con2.innerHTML=con1.innerHTML;
+var time=50;
+function scrollUp(){
+if(area.scrollTop >=con1.offsetHeight){
+	area.scrollTop=0;
+}
+    else{
+	area.scrollTop++;}
+	}
+	var myScroll = setInterval('scrollUp()',time);
+	area.onmouseover=function(){
+		clearInterval(myScroll);
+		}
+		area.onmouseout=function(){
+			myScroll = setInterval('scrollUp()',time);	
+}
+function calculator(){
+	var h = document.getElementById("input1").value;
+	var w = document.getElementById("input2").value;
+	var result = w/(h*h)*10000;
+	document.getElementById("result").innerHTML = result;
+}
+</script>
+</body>
+<!-- InstanceEnd --></html>
